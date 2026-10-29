@@ -378,3 +378,14 @@ São ações de "rodar agora": não têm estado para reverter. Cada uma diz ante
 | Menus "AMD / Intel / NVIDIA" | São idênticos entre si e já cobertos |
 | `SearchboxTaskbarMode=0` | Preferência visual, não otimização (pode virar item depois, se quiserem) |
 | Executáveis externos (`DnsJumper`, `EmptyStandbyList`, `ISLC`, `Autoruns`, `debloater.bat`) | Não verificáveis; o app já cobre o que eles fazem |
+| `SystemRestorePointCreationFrequency=0` permanente | O motor já libera o limite só durante a criação do ponto |
+| "Otimizar Energia" do .bat (`-duplicatescheme` sem ativar, `IdleDisable 0`) | Não faz nada (bug); coberto por `cpu.ultimate-power-plan` |
+| `GPU Priority=8` | Já é o padrão do Windows |
+| Re-registrar os apps Xbox ("Fix Xbox app") | Baixo valor |
+| Câmera/Mic: desabilitar e reabilitar todos os dispositivos `Camera`/`Image`/`MEDIA`/`AudioEndpoint` | `MEDIA` pega áudio HDMI da GPU e placas de captura; adiar para um futuro "Reparar câmera" |
+| Câmera/Mic: `pnputil /scan-devices`, `UsoClient StartScan/StartDownload`, `winget upgrade Microsoft.WindowsCamera` | O Windows já faz sozinho |
+| Câmera/Mic: parar `PlugPlay`/`DeviceInstall`/`DsmSvc` e mudar o tipo de início | `PlugPlay` não pode ser parado; muda padrões. Só `FrameServer` faz sentido (futuro "Reparar câmera") |
+| Re-registrar **todos** os pacotes Appx (Fix Loja / reverter debloater) | Substituído pela F9, que re-registra só a Store |
+| `chkdsk C: /f /r` | Substituído pela F6 (`/scan` + `/spotfix`) |
+| Botão "Reiniciar PC" | Só interface (e no .bat nem funciona) |
+| Logo ASCII, cores, menus | Só interface |
